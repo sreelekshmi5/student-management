@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management System</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="brand">
+
+        <div class="logo">
+            🎓
+        </div>
+
+        <div>
+            <h1>Student Management</h1>
+        </div>
+
+    </div>
+
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+
+    <!-- ================= STATISTICS ================= -->
+
+    <section class="stats">
+
+        <div class="stat-card purple">
+
+            <div class="stat-icon">
+                👨‍🎓
+            </div>
+
+            <div>
+                <span>Total Students</span>
+                <strong id="totalStudents">0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card blue">
+
+            <div class="stat-icon">
+                🏫
+            </div>
+
+            <div>
+                <span>Departments</span>
+                <strong id="totalDepartments">0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card pink">
+
+            <div class="stat-icon">
+                📚
+            </div>
+
+            <div>
+                <span>Active Records</span>
+                <strong id="activeRecords">0</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FORM CARD ================= -->
+
+    <section class="card form-card">
+
+        <div class="card-title">
+
+            <div>
+
+                <h2 id="formTitle">
+                    ✨ Add New Student
+                </h2>
+
+                <p>
+                    Enter student details below
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form id="studentForm">
+
+
+            <input type="hidden"
+                   id="studentId">
+
+
+            <div class="form-grid">
+
+
+                <div class="input-group">
+
+                    <label>
+                        Register Number
+                    </label>
+
+                    <input
+                            type="text"
+                            id="registerNo"
+                            placeholder="Enter Reg no."
+                            required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Student Name
+                    </label>
+
+                    <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter student name"
+                            required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter Email"
+                            required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Phone Number
+                    </label>
+
+                    <input
+                            type="text"
+                            id="phone"
+                            placeholder="Enter Phone no."
+                            maxlength="10"
+                            required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Department
+                    </label>
+
+                    <select id="department" required>
+
+                        <option value="">
+                            Select Department
+                        </option>
+
+                        <option value="CSE">
+                            CSE
+                        </option>
+
+                        <option value="IT">
+                            IT
+                        </option>
+
+                        <option value="ECE">
+                            ECE
+                        </option>
+
+                        <option value="EEE">
+                            EEE
+                        </option>
+
+                        <option value="MECH">
+                            MECH
+                        </option>
+
+                        <option value="CIVIL">
+                            CIVIL
+                        </option>
+                       <option value="Biotech">
+                        Biotech
+                    </option>
+                        <option value="CSBS">
+                            CSBS
+                        </option>
+                        <option value="Ai&Ds">
+                            AI&DS
+                        </option>
+                        <option value="Aiml">Aiml
+                        </option>
+                        <option value="Cyber security">
+                            Cyber security
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Year
+                    </label>
+
+                    <select id="year" required>
+
+                        <option value="">
+                            Select Year
+                        </option>
+
+                        <option value="1">
+                            1st Year
+                        </option>
+
+                        <option value="2">
+                            2nd Year
+                        </option>
+
+                        <option value="3">
+                            3rd Year
+                        </option>
+
+                        <option value="4">
+                            4th Year
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Semester
+                    </label>
+
+                    <select id="semester" required>
+
+                        <option value="">
+                            Select Semester
+                        </option>
+
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                        <option value="3">Semester 3</option>
+                        <option value="4">Semester 4</option>
+                        <option value="5">Semester 5</option>
+                        <option value="6">Semester 6</option>
+                        <option value="7">Semester 7</option>
+                        <option value="8">Semester 8</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="button-row">
+
+                <button
+                        type="submit"
+                        class="btn primary"
+                        id="saveButton">
+
+                    ➕ Add Student
+
+                </button>
+
+
+                <button
+                        type="button"
+                        class="btn secondary hidden"
+                        id="cancelButton">
+
+                    ✖ Cancel Edit
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- ================= SEARCH / FILTER ================= -->
+
+    <section class="card">
+
+        <div class="tools">
+
+            <div class="search-box">
+
+                <span>🔍</span>
+
+                <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search by name or register number..."
+                >
+
+            </div>
+
+
+            <select id="filterDepartment">
+
+                <option value="">
+                    All Departments
+                </option>
+
+                <option value="CSE">CSE</option>
+                <option value="IT">IT</option>
+                <option value="ECE">ECE</option>
+                <option value="EEE">EEE</option>
+                <option value="MECH">MECH</option>
+                <option value="CIVIL">CIVIL</option>
+                <option value="Biotech">Biotech</option>
+                <option value="CSBS">CSBS</option>
+                <option value="Ai&Ds">AI&DS</option>
+                <option value="Aiml">Aiml</option>
+                <option value="Cyber security">Cyber security</option>
+
+            </select>
+
+
+            <select id="filterYear">
+
+                <option value="">
+                    All Years
+                </option>
+
+                <option value="1">Year 1</option>
+                <option value="2">Year 2</option>
+                <option value="3">Year 3</option>
+                <option value="4">Year 4</option>
+
+            </select>
+
+
+            <select id="filterSemester">
+
+                <option value="">
+                    All Semesters
+                </option>
+
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STUDENT TABLE ================= -->
+
+    <section class="card table-card">
+
+        <div class="table-heading">
+
+            <div>
+
+                <h2>📋 Student Records</h2>
+
+                <p>
+                    Manage all student information
+                </p>
+
+            </div>
+
+            <span id="recordCount"
+                  class="record-count">
+                0 Records
+            </span>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Register No</th>
+
+                    <th>Name</th>
+
+                    <th>Email</th>
+
+                    <th>Phone</th>
+
+                    <th>Department</th>
+
+                    <th>Year</th>
+
+                    <th>Semester</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="studentTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div
+                id="emptyState"
+                class="empty-state">
+
+            <div class="empty-icon">
+                🎓
+            </div>
+
+            <h3>
+                No Students Found
+            </h3>
+
+            <p>
+                Add your first student using the form above.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= TOAST ================= -->
+
+<div id="toast"
+     class="toast">
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

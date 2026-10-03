@@ -1,2 +1,1 @@
-# student-management
-student management program
+# Students_-Management
